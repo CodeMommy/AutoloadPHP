@@ -1,7 +1,7 @@
 {
   "name": "codemommy/autoloadphp",
   "version": "0.0.1",
-  "description": "CodeMommy AutoloadPHP is a autoload helper for web development.",
+  "description": "Automatic load namespaces, classes and files",
   "keywords": [
     "CodeMommy",
     "AutoloadPHP",

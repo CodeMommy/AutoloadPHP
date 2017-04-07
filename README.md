@@ -7,7 +7,7 @@
 [![composer.lock Available](https://poser.pugx.org/CodeMommy/AutoloadPHP/composerlock?format=flat-square)](https://packagist.org/packages/CodeMommy/AutoloadPHP)
 
 
-> CodeMommy AutoloadPHP is a autoload helper for web development.
+> Automatic load namespaces, classes and files
 
 Visit [CodeMommy Website](http://www.codemommy.com) or [Packagist](https://packagist.org/packages/CodeMommy/AutoloadPHP) to get more information.
 
