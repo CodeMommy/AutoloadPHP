@@ -1,15 +1,22 @@
 <?php
 
 /**
- * @author  Candison November <www.kandisheng.com>
+ * @author Candison November <www.kandisheng.com>
  */
 
 namespace Root\NamespaceTwo;
 
+/**
+ * Class ClassTwo
+ * @package Root\NamespaceTwo
+ */
 class ClassTwo
 {
+    /**
+     * @return string
+     */
     public static function show()
     {
-        echo 'ClassTwo';
+        return 'ClassTwo';
     }
 }

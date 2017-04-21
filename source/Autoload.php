@@ -2,7 +2,7 @@
 
 /**
  * CodeMommy AutoloadPHP
- * @author  Candison November <www.kandisheng.com>
+ * @author Candison November <www.kandisheng.com>
  */
 
 namespace CodeMommy\AutoloadPHP;
