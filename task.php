@@ -52,7 +52,7 @@ Task::add('test', 'Test', function () {
     if (empty($test)) {
         system($phpUnitPath);
     } else {
-        system(sprintf('cd test && "%s" %sTest --repeat 100', $phpUnitPath, $test));
+        system(sprintf('"%s" test%s%sTest --repeat 100', $phpUnitPath, DIRECTORY_SEPARATOR, $test));
     }
 });
 
