@@ -1,22 +1,23 @@
 <?php
 
 /**
+ * CodeMommy AutoloadPHP
  * @author Candison November <www.kandisheng.com>
  */
 
-namespace Root\NamespaceTwo;
+namespace Root\NamespaceD;
 
 /**
- * Class ClassTwo
- * @package Root\NamespaceTwo
+ * Class ClassD
+ * @package Root\NamespaceD
  */
-class ClassTwo
+class ClassD
 {
     /**
      * @return string
      */
     public static function show()
     {
-        return 'ClassTwo';
+        return 'ClassD';
     }
 }

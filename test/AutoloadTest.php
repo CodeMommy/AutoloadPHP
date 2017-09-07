@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * CodeMommy AutoloadPHP
  * @author Candison November <www.kandisheng.com>
  */
 
@@ -10,30 +11,46 @@ namespace Test;
 
 use PHPUnit\Framework\TestCase;
 use CodeMommy\AutoloadPHP\Autoload;
-use NamespaceOne\ClassOne;
-use Root\NamespaceTwo\ClassTwo;
-use Root\NamespaceThree\ClassThree;
+use NamespaceA\ClassA;
+use Root\NamespaceB\ClassB;
+use Root\NamespaceC\ClassC;
+use Root\NamespaceD\ClassD;
+use Root\NamespaceE\ClassE;
 
+/**
+ * Class AutoloadTest
+ * @package Test
+ */
 class AutoloadTest extends TestCase
 {
     /**
      * Test Directory
      * @return void
      */
-    public function testDirectoryClassOne()
+    public function testDirectoryClassA()
     {
         Autoload::directory(__DIR__, '');
-        $this->assertEquals(ClassOne::show(), 'ClassOne');
+        $this->assertEquals(ClassA::show(), 'ClassA');
     }
 
     /**
      * Test Directory
      * @return void
      */
-    public function testDirectoryClassTwo()
+    public function testDirectoryClassB()
     {
         Autoload::directory(__DIR__, 'Root');
-        $this->assertEquals(ClassTwo::show(), 'ClassTwo');
+        $this->assertEquals(ClassB::show(), 'ClassB');
+    }
+
+    /**
+     * Test Directory
+     * @return void
+     */
+    public function testDirectoryClassC()
+    {
+        Autoload::directory(__DIR__, 'Root');
+        $this->assertEquals(ClassC::show(), 'ClassC');
     }
 
     /**
@@ -42,7 +59,17 @@ class AutoloadTest extends TestCase
      */
     public function testFile()
     {
-        Autoload::file(__DIR__ . '/NamespaceThree/ClassThree.php', 'Root\NamespaceThree\ClassThree');
-        $this->assertEquals(ClassThree::show(), 'ClassThree');
+        Autoload::file(__DIR__ . '/NamespaceD/ClassD.php', 'Root\NamespaceD\ClassD');
+        $this->assertEquals(ClassD::show(), 'ClassD');
+    }
+
+    /**
+     * Test Basic
+     * @return void
+     */
+    public function testBasic()
+    {
+        Autoload::basic(__DIR__ . '/NamespaceE/ClassE.php');
+        $this->assertEquals(ClassE::show(), 'ClassE');
     }
 }
