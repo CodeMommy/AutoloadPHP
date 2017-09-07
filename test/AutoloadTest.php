@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-require_once(__DIR__ . '/../vendor/autoload.php');
+namespace Test;
 
 use PHPUnit\Framework\TestCase;
 use CodeMommy\AutoloadPHP\Autoload;
@@ -17,22 +17,22 @@ use Root\NamespaceThree\ClassThree;
 class AutoloadTest extends TestCase
 {
     /**
-     * Test Load
+     * Test Directory
      * @return void
      */
-    public function testLoad1()
+    public function testDirectoryClassOne()
     {
-        Autoload::load(__DIR__, '');
+        Autoload::directory(__DIR__, '');
         $this->assertEquals(ClassOne::show(), 'ClassOne');
     }
 
     /**
-     * Test Load
+     * Test Directory
      * @return void
      */
-    public function testLoad2()
+    public function testDirectoryClassTwo()
     {
-        Autoload::load(__DIR__, 'Root');
+        Autoload::directory(__DIR__, 'Root');
         $this->assertEquals(ClassTwo::show(), 'ClassTwo');
     }
 

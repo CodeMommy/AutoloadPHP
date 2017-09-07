@@ -1,6 +1,6 @@
 {
   "name": "codemommy/autoloadphp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Automatic load namespaces, classes and files",
   "keywords": [
     "CodeMommy",
