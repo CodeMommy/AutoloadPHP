@@ -5,7 +5,7 @@
 [![Stable](https://poser.pugx.org/CodeMommy/AutoloadPHP/version?format=flat-square)](https://packagist.org/packages/CodeMommy/AutoloadPHP)
 [![Unstable](https://poser.pugx.org/CodeMommy/AutoloadPHP/v/unstable?format=flat-square)](https://packagist.org/packages/CodeMommy/AutoloadPHP)
 [![composer.lock Available](https://poser.pugx.org/CodeMommy/AutoloadPHP/composerlock?format=flat-square)](https://packagist.org/packages/CodeMommy/AutoloadPHP)
-
+[![Build Status](https://travis-ci.org/CodeMommy/AutoloadPHP.svg?branch=master)](https://travis-ci.org/CodeMommy/AutoloadPHP)
 
 > Automatic load namespaces, classes and files
 
