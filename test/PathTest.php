@@ -21,28 +21,6 @@ use NotPublic\Path;
 class PathTest extends TestCase
 {
     /**
-     * Test Remove First Slash
-     * @return void
-     */
-    public function testRemoveFirstSlash()
-    {
-        $string = '/\\CodeMommy';
-        Path::removeFirstSlash($string);
-        $this->assertEquals($string, 'CodeMommy');
-    }
-
-    /**
-     * Test Remove Last Slash
-     * @return void
-     */
-    public function testRemoveLastSlash()
-    {
-        $string = 'CodeMommy/\\';
-        Path::removeLastSlash($string);
-        $this->assertEquals($string, 'CodeMommy');
-    }
-
-    /**
      * Test Replace Slash
      * @return void
      */

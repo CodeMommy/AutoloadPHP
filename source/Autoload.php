@@ -26,16 +26,14 @@ class Autoload
     {
         spl_autoload_register(function ($className) use ($directory, $namespaceRoot) {
             Path::replaceSlash($directory);
-            Path::removeLastSlash($directory);
+            $directory = rtrim($directory, '/\\');
             Path::replaceSlash($namespaceRoot);
-            Path::removeFirstSlash($namespaceRoot);
-            Path::removeLastSlash($namespaceRoot);
+            $namespaceRoot = trim($namespaceRoot, '/\\');
             Path::replaceSlash($className);
-            Path::removeFirstSlash($className);
-            Path::removeLastSlash($className);
+            $className = trim($className, '/\\');
             if (substr($className, 0, strlen($namespaceRoot)) == $namespaceRoot) {
                 $className = substr($className, strlen($namespaceRoot));
-                Path::removeFirstSlash($className);
+                $className = ltrim($className, '/\\');
             }
             $extensionList = array('php', 'class.php');
             foreach ($extensionList as $extension) {
@@ -56,11 +54,9 @@ class Autoload
     {
         spl_autoload_register(function ($name) use ($file, $className) {
             Path::replaceSlash($className);
-            Path::removeFirstSlash($className);
-            Path::removeLastSlash($className);
+            $className = trim($className, '/\\');
             Path::replaceSlash($name);
-            Path::removeFirstSlash($name);
-            Path::removeLastSlash($name);
+            $name = trim($name, '/\\');
             if ($className == $name) {
                 if (is_file($file)) {
                     require_once($file);
