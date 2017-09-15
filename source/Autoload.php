@@ -37,7 +37,7 @@ class Autoload
             }
             $extensionList = array('php', 'class.php');
             foreach ($extensionList as $extension) {
-                $file = $directory . '/' . $className . '.' . $extension;
+                $file = $directory . DIRECTORY_SEPARATOR . $className . '.' . $extension;
                 if (is_file($file)) {
                     require_once($file);
                 }
