@@ -7,10 +7,6 @@
 
 namespace CodeMommy\AutoloadPHP;
 
-require_once(__DIR__ . '/../private/Path.php');
-
-use NotPublic\Path;
-
 /**
  * Class Autoload
  * @package CodeMommy\AutoloadPHP
@@ -25,11 +21,11 @@ class Autoload
     public static function directory($directory, $namespaceRoot)
     {
         spl_autoload_register(function ($className) use ($directory, $namespaceRoot) {
-            Path::replaceSlash($directory);
+            $directory = str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $directory);
             $directory = rtrim($directory, '/\\');
-            Path::replaceSlash($namespaceRoot);
+            $namespaceRoot = str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $namespaceRoot);
             $namespaceRoot = trim($namespaceRoot, '/\\');
-            Path::replaceSlash($className);
+            $className = str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $className);
             $className = trim($className, '/\\');
             if (substr($className, 0, strlen($namespaceRoot)) == $namespaceRoot) {
                 $className = substr($className, strlen($namespaceRoot));
@@ -53,9 +49,9 @@ class Autoload
     public static function file($file, $className)
     {
         spl_autoload_register(function ($name) use ($file, $className) {
-            Path::replaceSlash($className);
+            $className = str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $className);
             $className = trim($className, '/\\');
-            Path::replaceSlash($name);
+            $name = str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $name);
             $name = trim($name, '/\\');
             if ($className == $name) {
                 if (is_file($file)) {
