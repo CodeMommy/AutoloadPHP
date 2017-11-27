@@ -46,7 +46,7 @@ class AutoloadTest extends TestCase
      */
     public function testDirectory()
     {
-        $directory = __DIR__ . '/TestCase/Directory';
+        $directory = __DIR__ . '/case/directory';
         Autoload::directory($directory, '');
         $this->assertEquals(ClassA::show(), 'ClassA');
         Autoload::directory($directory, 'Root');
@@ -61,7 +61,7 @@ class AutoloadTest extends TestCase
      */
     public function testFile()
     {
-        $file = __DIR__ . '/TestCase/File/ClassFile.php';
+        $file = __DIR__ . '/case/file/ClassFile.php';
         Autoload::file($file, 'Root\NamespaceFile\ClassFile');
         $this->assertEquals(ClassFile::show(), 'ClassFile');
     }
@@ -72,7 +72,7 @@ class AutoloadTest extends TestCase
      */
     public function testBasic()
     {
-        $file = __DIR__ . '/TestCase/Basic/ClassBasic.php';
+        $file = __DIR__ . '/case/basic/ClassBasic.php';
         // $isOnce = true
         Autoload::basic($file);
         $this->assertEquals(ClassBasic::show(), 'ClassBasic');
