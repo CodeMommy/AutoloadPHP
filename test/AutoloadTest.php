@@ -14,8 +14,8 @@ use CodeMommy\AutoloadPHP\Autoload;
 use NamespaceA\ClassA;
 use Root\NamespaceB\ClassB;
 use Root\NamespaceC\ClassC;
-use Root\NamespaceD\ClassD;
-use Root\NamespaceE\ClassE;
+use Root\NamespaceFile\ClassFile;
+use Root\NamespaceBasic\ClassBasic;
 
 /**
  * Class AutoloadTest
@@ -24,32 +24,34 @@ use Root\NamespaceE\ClassE;
 class AutoloadTest extends TestCase
 {
     /**
+     * AutoloadTest constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Test Construct
+     */
+    public function testConstruct()
+    {
+        new Autoload();
+        $this->assertEquals(true, true);
+    }
+
+    /**
      * Test Directory
      * @return void
      */
-    public function testDirectoryClassA()
+    public function testDirectory()
     {
-        Autoload::directory(__DIR__, '');
+        $directory = __DIR__ . '/TestCase/Directory';
+        Autoload::directory($directory, '');
         $this->assertEquals(ClassA::show(), 'ClassA');
-    }
-
-    /**
-     * Test Directory
-     * @return void
-     */
-    public function testDirectoryClassB()
-    {
-        Autoload::directory(__DIR__, 'Root');
+        Autoload::directory($directory, 'Root');
         $this->assertEquals(ClassB::show(), 'ClassB');
-    }
-
-    /**
-     * Test Directory
-     * @return void
-     */
-    public function testDirectoryClassC()
-    {
-        Autoload::directory(__DIR__, 'Root');
+        Autoload::directory($directory, 'Root');
         $this->assertEquals(ClassC::show(), 'ClassC');
     }
 
@@ -59,8 +61,9 @@ class AutoloadTest extends TestCase
      */
     public function testFile()
     {
-        Autoload::file(__DIR__ . '/NamespaceD/ClassD.php', 'Root\NamespaceD\ClassD');
-        $this->assertEquals(ClassD::show(), 'ClassD');
+        $file = __DIR__ . '/TestCase/File/ClassFile.php';
+        Autoload::file($file, 'Root\NamespaceFile\ClassFile');
+        $this->assertEquals(ClassFile::show(), 'ClassFile');
     }
 
     /**
@@ -69,7 +72,13 @@ class AutoloadTest extends TestCase
      */
     public function testBasic()
     {
-        Autoload::basic(__DIR__ . '/NamespaceE/ClassE.php');
-        $this->assertEquals(ClassE::show(), 'ClassE');
+        $file = __DIR__ . '/TestCase/Basic/ClassBasic.php';
+        // $isOnce = true
+        Autoload::basic($file);
+        $this->assertEquals(ClassBasic::show(), 'ClassBasic');
+        // $isOnce = false
+        Autoload::basic($file, false);
+        Autoload::basic($file, false);
+        $this->assertEquals(ClassBasic::show(), 'ClassBasic');
     }
 }

@@ -1,7 +1,16 @@
-<phpunit bootstrap="vendor/autoload.php">
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="./vendor/autoload.php" colors="true">
     <testsuites>
         <testsuite name="CodeMommy AutoloadPHP">
-            <directory>test</directory>
+            <directory suffix="Test.php">./test</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./source</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-html" target="./.report" charset="UTF-8"/>
+    </logging>
 </phpunit>

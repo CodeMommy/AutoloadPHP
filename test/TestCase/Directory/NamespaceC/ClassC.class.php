@@ -14,6 +14,13 @@ namespace Root\NamespaceC;
 class ClassC
 {
     /**
+     * ClassC constructor.
+     */
+    public function __construct()
+    {
+    }
+
+    /**
      * @return string
      */
     public static function show()

@@ -1,6 +1,6 @@
 {
     "name": "codemommy/autoloadphp",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "Automatic load namespaces, classes and files",
     "keywords": [
         "CodeMommy",
@@ -26,11 +26,32 @@
             "CodeMommy\\AutoloadPHP\\": "source/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "CodeMommy\\AutoloadPHP\\Script\\": "script/"
+        }
+    },
+    "scripts": {
+        "clean": [
+            "CodeMommy\\AutoloadPHP\\Script\\Task::cleanReport"
+        ],
+        "test": [
+            "CodeMommy\\AutoloadPHP\\Script\\Task::cleanReport",
+            "\"vendor/bin/phpunit\" -v",
+            "start .report/index.html"
+        ],
+        "update-project": [
+            "git pull",
+            "composer self-update",
+            "composer update"
+        ],
+        "update-version": "CodeMommy\\AutoloadPHP\\Script\\Task::updateVersion"
+    },
     "require": {
         "php": ">=5.3.0"
     },
     "require-dev": {
-        "CodeMommy/TaskPHP": "*",
+        "symfony/filesystem": "*",
         "phpunit/phpunit": "*"
     }
 }

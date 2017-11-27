@@ -14,6 +14,13 @@ namespace NamespaceA;
 class ClassA
 {
     /**
+     * ClassA constructor.
+     */
+    public function __construct()
+    {
+    }
+
+    /**
      * @return string
      */
     public static function show()

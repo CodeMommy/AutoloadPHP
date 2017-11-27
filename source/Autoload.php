@@ -14,6 +14,13 @@ namespace CodeMommy\AutoloadPHP;
 class Autoload
 {
     /**
+     * Autoload constructor.
+     */
+    public function __construct()
+    {
+    }
+
+    /**
      * Directory
      * @param $directory
      * @param $namespaceRoot
