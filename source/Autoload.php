@@ -76,11 +76,7 @@ class Autoload
     public static function basic($file, $isOnce = true)
     {
         if (is_file($file)) {
-            if ($isOnce) {
-                require_once($file);
-            } else {
-                require($file);
-            }
+            $isOnce ? require_once($file) : require($file);
         }
     }
 }
