@@ -17,9 +17,9 @@
     "authors": [
         {
             "name": "Candison November",
+            "role": "Founder",
             "email": "kandisheng@163.com",
-            "homepage": "http://www.kandisheng.com",
-            "role": "Founder"
+            "homepage": "http://www.kandisheng.com"
         }
     ],
     "autoload": {
