@@ -9,7 +9,6 @@ namespace CodeMommy\AutoloadPHP\Script;
 
 use CodeMommy\TaskPHP\Console;
 use CodeMommy\TaskPHP\FileSystem;
-use CodeMommy\TaskPHP\Composer;
 
 /**
  * Class Command
