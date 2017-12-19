@@ -41,10 +41,10 @@
     },
     "scripts": {
         "clean": [
-            "CodeMommy\\AutoloadPHP\\Script\\Command::cleanReport"
+            "CodeMommy\\AutoloadPHP\\Script\\CleanReport::start"
         ],
         "test": [
-            "CodeMommy\\AutoloadPHP\\Script\\Command::cleanReport",
+            "CodeMommy\\AutoloadPHP\\Script\\CleanReport::start",
             "\"vendor/bin/phpunit\" -v",
             "start .report/index.html"
         ],

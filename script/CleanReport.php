@@ -11,22 +11,22 @@ use CodeMommy\TaskPHP\Console;
 use CodeMommy\TaskPHP\FileSystem;
 
 /**
- * Class Command
+ * Class CleanReport
  * @package CodeMommy\AutoloadPHP\Script;
  */
-class Command
+class CleanReport
 {
     /**
-     * Command constructor.
+     * CleanReport constructor.
      */
     public function __construct()
     {
     }
 
     /**
-     * Clean Report
+     * Start
      */
-    public static function cleanReport()
+    public static function start()
     {
         $removeList = array(
             '.report'
