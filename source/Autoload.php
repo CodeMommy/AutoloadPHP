@@ -11,7 +11,7 @@ namespace CodeMommy\AutoloadPHP;
  * Class Autoload
  * @package CodeMommy\AutoloadPHP
  */
-class Autoload
+class Autoload implements AutoloadInterface
 {
     /**
      * Autoload constructor.
@@ -22,10 +22,10 @@ class Autoload
 
     /**
      * Directory
-     * @param $directory
-     * @param $namespaceRoot
+     * @param string $directory
+     * @param string $namespaceRoot
      */
-    public static function directory($directory, $namespaceRoot)
+    public static function directory($directory = '.', $namespaceRoot = '')
     {
         spl_autoload_register(function ($className) use ($directory, $namespaceRoot) {
             $directory = str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $directory);
@@ -41,7 +41,7 @@ class Autoload
             $extensionList = array('php', 'class.php');
             foreach ($extensionList as $extension) {
                 $file = $directory . DIRECTORY_SEPARATOR . $className . '.' . $extension;
-                if (is_file($file)) {
+                if (is_file($file) && is_readable($file)) {
                     require_once($file);
                 }
             }
@@ -50,10 +50,10 @@ class Autoload
 
     /**
      * File
-     * @param $file
-     * @param $className
+     * @param string $file
+     * @param string $className
      */
-    public static function file($file, $className)
+    public static function file($file = '', $className = '')
     {
         spl_autoload_register(function ($name) use ($file, $className) {
             $className = str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $className);
@@ -61,7 +61,7 @@ class Autoload
             $name = str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $name);
             $name = trim($name, '/\\');
             if ($className == $name) {
-                if (is_file($file)) {
+                if (is_file($file) && is_readable($file)) {
                     require_once($file);
                 }
             }
@@ -70,12 +70,12 @@ class Autoload
 
     /**
      * Basic
-     * @param $file
+     * @param string $file
      * @param bool $isOnce
      */
-    public static function basic($file, $isOnce = true)
+    public static function basic($file = '', $isOnce = true)
     {
-        if (is_file($file)) {
+        if (is_file($file) && is_readable($file)) {
             $isOnce ? require_once($file) : require($file);
         }
     }
