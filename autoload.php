@@ -5,7 +5,7 @@
  * @author Candison November <www.kandisheng.com>
  */
 
-if (!file_exists('autoloadDirectory')) {
+if (!class_exists('autoloadDirectory')) {
     /**
      * Autoload Directory
      * @param string $directory
