@@ -35,5 +35,5 @@ if (!class_exists('autoloadDirectory')) {
     }
 }
 
-autoloadDirectory(sprintf('%s%ssource', __DIR__, DIRECTORY_SEPARATOR), 'CodeMommy\AutoloadPHP');
-autoloadDirectory(sprintf('%s%sinterface', __DIR__, DIRECTORY_SEPARATOR), 'CodeMommy\AutoloadPHP');
+autoloadDirectory(sprintf('%s%ssource', __DIR__, DIRECTORY_SEPARATOR), 'CodeMommy\\AutoloadPHP');
+autoloadDirectory(sprintf('%s%sinterface', __DIR__, DIRECTORY_SEPARATOR), 'CodeMommy\\AutoloadPHP');
