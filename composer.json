@@ -57,16 +57,13 @@
         ],
         "test": [
             "composer phpunit",
+            "composer phpcbf",
             "composer phpcs",
             "composer phpmd"
         ],
-        "phpcs": [
-            "\"vendor/bin/phpcs\" interface --standard=PSR2",
-            "\"vendor/bin/phpcs\" source --standard=PSR2",
-            "\"vendor/bin/phpcs\" script --standard=PSR2",
-            "\"vendor/bin/phpcs\" test --standard=PSR2"
-        ],
         "phpmd": "\"vendor/bin/phpmd\" interface,source,script,test text cleancode,codesize,controversial,design,naming,unusedcode",
+        "phpcs": "\"vendor/bin/phpcs\" interface source script test --standard=PSR2",
+        "phpcbf": "\"vendor/bin/phpcbf\" interface source script test --standard=PSR2",
         "phpunit": "CodeMommy\\AutoloadPHP\\Script\\PHPUnit::start",
         "clean": "CodeMommy\\AutoloadPHP\\Script\\Clean::start"
     }
