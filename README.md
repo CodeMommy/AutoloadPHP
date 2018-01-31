@@ -9,6 +9,10 @@
 
 > Automatic load namespaces, classes and files
 
+## Manual
+
+- [Version 1.0 简体中文](manual/1.0_SimplifiedChinese.md)
+
 ## Contributor
 
 - [Candison November](http://www.kandisheng.com) - Founder

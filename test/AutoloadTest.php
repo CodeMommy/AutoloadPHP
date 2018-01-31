@@ -37,7 +37,7 @@ class AutoloadTest extends TestCase
     public function testConstruct()
     {
         new Autoload();
-        $this->assertEquals(true, true);
+        $this->assertTrue(true);
     }
 
     /**
