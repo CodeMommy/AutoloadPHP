@@ -40,7 +40,9 @@
     },
     "require-dev": {
         "CodeMommy/TaskPHP": "*",
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "*",
+        "phpmd/phpmd": "*",
+        "squizlabs/php_codesniffer": "*"
     },
     "scripts": {
         "environment": [
@@ -53,7 +55,19 @@
             "composer self-update",
             "composer update"
         ],
-        "test": "CodeMommy\\AutoloadPHP\\Script\\Test::start",
+        "test": [
+            "composer phpunit",
+            "composer phpcs",
+            "composer phpmd"
+        ],
+        "phpcs": [
+            "\"vendor/bin/phpcs\" interface --standard=PSR2",
+            "\"vendor/bin/phpcs\" source --standard=PSR2",
+            "\"vendor/bin/phpcs\" script --standard=PSR2",
+            "\"vendor/bin/phpcs\" test --standard=PSR2"
+        ],
+        "phpmd": "\"vendor/bin/phpmd\" interface,source,script,test text cleancode,codesize,controversial,design,naming,unusedcode",
+        "phpunit": "CodeMommy\\AutoloadPHP\\Script\\PHPUnit::start",
         "clean": "CodeMommy\\AutoloadPHP\\Script\\Clean::start"
     }
 }
