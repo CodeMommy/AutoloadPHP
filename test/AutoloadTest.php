@@ -7,9 +7,8 @@
 
 declare(strict_types=1);
 
-namespace Test;
+namespace CodeMommy\AutoloadPHP\Test;
 
-use PHPUnit\Framework\TestCase;
 use CodeMommy\AutoloadPHP\Autoload;
 use NamespaceA\ClassA;
 use Root\NamespaceB\ClassB;
@@ -18,9 +17,9 @@ use Root\NamespaceFile\ClassFile;
 
 /**
  * Class AutoloadTest
- * @package Test
+ * @package CodeMommy\AutoloadPHP\Test
  */
-class AutoloadTest extends TestCase
+class AutoloadTest extends BaseTest
 {
     /**
      * AutoloadTest constructor.
@@ -45,7 +44,7 @@ class AutoloadTest extends TestCase
      */
     public function testDirectory()
     {
-        $directory = __DIR__ . '/case/directory';
+        $directory = $this->getTestCasePath('directory');
         Autoload::directory($directory, '');
         $this->assertEquals(ClassA::show(), 'ClassA');
         Autoload::directory($directory, 'Root');
@@ -60,7 +59,7 @@ class AutoloadTest extends TestCase
      */
     public function testFile()
     {
-        $file = __DIR__ . '/case/file/ClassFile.php';
+        $file = $this->getTestCasePath('file/ClassFile.php');
         Autoload::file($file, 'Root\NamespaceFile\ClassFile');
         $this->assertEquals(ClassFile::show(), 'ClassFile');
     }
