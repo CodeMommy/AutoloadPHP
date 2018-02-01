@@ -1,2 +1,2 @@
 coverage_clover: workbench/code_coverage_report/clover/clover.xml
-json_path: workbench/code_coverage_report/coveralls/coveralls.json
+json_path: workbench/code_coverage_report/clover/coveralls.json
