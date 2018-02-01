@@ -28,6 +28,7 @@ class Clean
      */
     public static function start()
     {
+        PHPUnit::clean();
         $removeList = array(
             '.report'
         );
