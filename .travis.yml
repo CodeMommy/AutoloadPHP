@@ -15,4 +15,4 @@ before_script:
 script:
   - vendor/bin/phpunit -v
 after_script:
-  - travis_retry php vendor/bin/coveralls -v
+  - travis_retry vendor/bin/php-coveralls -v
