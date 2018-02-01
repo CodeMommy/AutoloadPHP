@@ -6,7 +6,7 @@
  */
 
 $autoloaDirectory = array(
-    'source' => 'CodeMommy\\AutoloadPHP',
+    'class' => 'CodeMommy\\AutoloadPHP',
     'interface' => 'CodeMommy\\AutoloadPHP'
 );
 
