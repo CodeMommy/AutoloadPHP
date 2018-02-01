@@ -30,7 +30,7 @@ class Clean
     {
         PHPUnit::clean();
         $removeList = array(
-            '.report'
+            'workbench'
         );
         $result = FileSystem::remove($removeList);
         if ($result) {
