@@ -15,7 +15,6 @@ use NamespaceA\ClassA;
 use Root\NamespaceB\ClassB;
 use Root\NamespaceC\ClassC;
 use Root\NamespaceFile\ClassFile;
-use Root\NamespaceBasic\ClassBasic;
 
 /**
  * Class AutoloadTest
@@ -64,21 +63,5 @@ class AutoloadTest extends TestCase
         $file = __DIR__ . '/case/file/ClassFile.php';
         Autoload::file($file, 'Root\NamespaceFile\ClassFile');
         $this->assertEquals(ClassFile::show(), 'ClassFile');
-    }
-
-    /**
-     * Test Basic
-     * @return void
-     */
-    public function testBasic()
-    {
-        $file = __DIR__ . '/case/basic/ClassBasic.php';
-        // $isOnce = true
-        Autoload::basic($file);
-        $this->assertEquals(ClassBasic::show(), 'ClassBasic');
-        // $isOnce = false
-        Autoload::basic($file, false);
-        Autoload::basic($file, false);
-        $this->assertEquals(ClassBasic::show(), 'ClassBasic');
     }
 }

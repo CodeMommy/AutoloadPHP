@@ -67,16 +67,4 @@ class Autoload implements AutoloadInterface
             }
         });
     }
-
-    /**
-     * Basic
-     * @param string $file
-     * @param bool $isOnce
-     */
-    public static function basic($file = '', $isOnce = true)
-    {
-        if (is_file($file) && is_readable($file)) {
-            $isOnce ? require_once($file) : require($file);
-        }
-    }
 }

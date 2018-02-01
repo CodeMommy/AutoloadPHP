@@ -33,12 +33,4 @@ interface AutoloadInterface
      * @return mixed
      */
     public static function file($file = '', $className = '');
-
-    /**
-     * Basic
-     * @param string $file
-     * @param bool $isOnce
-     * @return mixed
-     */
-    public static function basic($file = '', $isOnce = true);
 }
