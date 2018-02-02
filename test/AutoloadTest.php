@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace CodeMommy\AutoloadPHP\Test;
 
+use Exception;
 use CodeMommy\AutoloadPHP\Autoload;
 use NamespaceA\ClassA;
 use Root\NamespaceB\ClassB;
@@ -31,6 +32,7 @@ class AutoloadTest extends BaseTest
 
     /**
      * Test Construct
+     * @throws Exception
      */
     public function testConstruct()
     {
@@ -40,6 +42,7 @@ class AutoloadTest extends BaseTest
 
     /**
      * Test Directory
+     * @throws Exception
      * @return void
      */
     public function testDirectory()
@@ -55,6 +58,7 @@ class AutoloadTest extends BaseTest
 
     /**
      * Test File
+     * @throws Exception
      * @return void
      */
     public function testFile()
