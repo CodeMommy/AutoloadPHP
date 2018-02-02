@@ -1,5 +1,6 @@
 # CodeMommy AutoloadPHP
 
+[![Minimum PHP Version](https://img.shields.io/badge/php->=5.3-8892BF.svg)](https://php.net)
 [![License](https://poser.pugx.org/CodeMommy/AutoloadPHP/license)](LICENSE)
 [![Download](https://poser.pugx.org/CodeMommy/AutoloadPHP/downloads)](https://packagist.org/packages/CodeMommy/AutoloadPHP)
 [![Stable](https://poser.pugx.org/CodeMommy/AutoloadPHP/version)](https://packagist.org/packages/CodeMommy/AutoloadPHP)
