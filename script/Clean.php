@@ -38,5 +38,6 @@ class Clean
             return;
         }
         Console::printLine('Clean Error.', 'error');
+        return;
     }
 }
