@@ -24,11 +24,19 @@ class Clean
     }
 
     /**
-     * Start
+     * All
      */
-    public static function start()
+    public static function all()
     {
+        self::workbench();
         PHPUnit::clean();
+    }
+
+    /**
+     * Workbench
+     */
+    public static function workbench()
+    {
         $removeList = array(
             'workbench'
         );
