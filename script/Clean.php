@@ -24,15 +24,6 @@ class Clean
     }
 
     /**
-     * All
-     */
-    public static function all()
-    {
-        self::workbench();
-        PHPUnit::clean();
-    }
-
-    /**
      * Workbench
      */
     public static function workbench()
@@ -47,5 +38,22 @@ class Clean
         }
         Console::printLine('Clean Error.', 'error');
         return;
+    }
+
+    /**
+     * PHPUnit
+     */
+    public static function phpUnit()
+    {
+        PHPUnit::clean();
+    }
+
+    /**
+     * All
+     */
+    public static function all()
+    {
+        self::workbench();
+        self::phpUnit();
     }
 }
