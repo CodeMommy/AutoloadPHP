@@ -64,11 +64,18 @@
             "composer phpmd"
         ],
         "phpmd": [
+            "CodeMommy\\AutoloadPHP\\Script\\Clean::start",
             "CodeMommy\\AutoloadPHP\\Script\\RemoveRule::start",
             "\"vendor/bin/phpmd\" autoload.php,interface,class,script,test,test_case text cleancode,codesize,controversial,design,naming,unusedcode"
         ],
-        "phpcs": "\"vendor/bin/phpcs\" autoload.php interface class script test test_case --standard=PSR2",
-        "phpcbf": "\"vendor/bin/phpcbf\" autoload.php interface class script test test_case --standard=PSR2",
+        "phpcs": [
+            "CodeMommy\\AutoloadPHP\\Script\\Clean::start",
+            "\"vendor/bin/phpcs\" autoload.php interface class script test test_case --standard=PSR2"
+        ],
+        "phpcbf": [
+            "CodeMommy\\AutoloadPHP\\Script\\Clean::start",
+            "\"vendor/bin/phpcbf\" autoload.php interface class script test test_case --standard=PSR2"
+        ],
         "phpunit": "CodeMommy\\AutoloadPHP\\Script\\PHPUnit::start",
         "clean": "CodeMommy\\AutoloadPHP\\Script\\Clean::start"
     }
