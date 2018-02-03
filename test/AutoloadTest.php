@@ -7,9 +7,10 @@
 
 declare(strict_types=1);
 
-namespace CodeMommy\AutoloadPHP\Test;
+namespace CodeMommy\Test;
 
 use Exception;
+use CodeMommy\DevelopPHP\PHPUnitBase;
 use CodeMommy\AutoloadPHP\Autoload;
 use NamespaceA\ClassA;
 use Root\NamespaceB\ClassB;
@@ -18,9 +19,9 @@ use Root\NamespaceFile\ClassFile;
 
 /**
  * Class AutoloadTest
- * @package CodeMommy\AutoloadPHP\Test
+ * @package CodeMommy\Test
  */
-class AutoloadTest extends BaseTest
+class AutoloadTest extends PHPUnitBase
 {
     /**
      * AutoloadTest constructor.
