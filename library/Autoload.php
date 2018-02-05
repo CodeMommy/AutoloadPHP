@@ -24,7 +24,7 @@ class Autoload
      * Directory
      * @param array $autoloaDirectory
      */
-    public static function directory($autoloaDirectory =array())
+    public static function directory($autoloaDirectory = array())
     {
         foreach ($autoloaDirectory as $directory => $namespaceRoot) {
             $directory = sprintf('%s%s%s', __DIR__, DIRECTORY_SEPARATOR, $directory);
