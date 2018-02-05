@@ -8,6 +8,10 @@
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./class</directory>
+            <directory suffix=".php">./library</directory>
+            <exclude>
+                <file>./library/Autoload.php</file>
+            </exclude>
         </whitelist>
     </filter>
     <logging>
