@@ -11,8 +11,8 @@ use CodeMommy\AutoloadPHP\Library\Autoload;
 
 $autoloaDirectory = array(
     'library' => 'CodeMommy\\AutoloadPHP\\Library',
-    'class' => 'CodeMommy\\AutoloadPHP',
-    'interface' => 'CodeMommy\\AutoloadPHP'
+    'interface' => 'CodeMommy\\AutoloadPHP',
+    'class' => 'CodeMommy\\AutoloadPHP'
 );
 
 Autoload::directory($autoloaDirectory);
