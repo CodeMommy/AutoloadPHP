@@ -24,6 +24,7 @@
     ],
     "autoload": {
         "psr-4": {
+            "CodeMommy\\AutoloadPHP\\Library\\": "library",
             "CodeMommy\\AutoloadPHP\\": [
                 "interface",
                 "class"
