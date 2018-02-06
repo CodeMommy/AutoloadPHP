@@ -46,6 +46,7 @@
     "scripts": {
         "update-project": "CodeMommy\\DevelopPHP\\UpdateProject::start",
         "environment": "CodeMommy\\DevelopPHP\\Environment::start",
+        "pdepend": "CodeMommy\\DevelopPHP\\PHPDepend::start",
         "phpunit": "CodeMommy\\DevelopPHP\\PHPUnit::start",
         "phpcbf": "CodeMommy\\DevelopPHP\\PHPCodeBeautifierAndFixer::start",
         "phpcs": "CodeMommy\\DevelopPHP\\PHPCodeSniffer::start",
